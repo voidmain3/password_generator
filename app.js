@@ -2,6 +2,7 @@ const characters = 'abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWX
 
 const passText = document.querySelector('h3');
 const generateBtn = document.querySelector('.generate-btn');
+const copyBtn = document.querySelector('.copy-btn')
 
 const passwordGenerate = () => {
     let password = "";
@@ -14,6 +15,21 @@ const passwordGenerate = () => {
 generateBtn.addEventListener('click', ()=> {
     console.log('clicked')
     passText.innerHTML =  passwordGenerate();
+})
+
+copyBtn.addEventListener('click', ()=> {
+    const copyToClipboard = str => {
+        const el = document.createElement('textarea');
+        el.value = passText.innerText;
+        el.setAttribute('readonly', '');
+        el.style.position = 'absolute';
+        el.style.left = '-9999px';
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+      };
+      copyToClipboard();
 })
 
 
