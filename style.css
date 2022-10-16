@@ -36,11 +36,32 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
   font-family: "Noto Sans Mono", monospace;
 }
 .pass-text button {
   border-radius: 5px;
   padding: 0.5rem 1rem;
   font-size: 1rem;
+  margin-left: 2rem;
+}
+.material-symbols-outlined {
+  display: none;
+  border: 1px solid violet;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: all 0.2s ease-in-out;
+  margin-left: 1rem;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+.material-symbols-outlined.show {
+  display: inline-block;
+}
+.material-symbols-outlined:hover {
+  background-color: violet;
+  color: rgb(51, 0, 58);
+  cursor: pointer;
 }
