@@ -2,7 +2,9 @@ const characters = 'abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWX
 
 const passText = document.querySelector('h3');
 const generateBtn = document.querySelector('.generate-btn');
-const copyBtn = document.querySelector('.copy-btn')
+const copyBtn = document.querySelector('.material-symbols-outlined')
+
+let generatedPass = ''
 
 const passwordGenerate = () => {
     let password = "";
@@ -14,7 +16,11 @@ const passwordGenerate = () => {
 
 generateBtn.addEventListener('click', ()=> {
     console.log('clicked')
-    passText.innerHTML =  passwordGenerate();
+    generatedPass =  passwordGenerate();
+    passText.innerHTML =  generatedPass
+    if (generatedPass) {
+        copyBtn.classList.add('show')
+    }
 })
 
 copyBtn.addEventListener('click', ()=> {
